@@ -1,0 +1,11 @@
+
+.idea/
+*.iml
+
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+
+
+# Конфиги
+src/main/resources/db/db.properties

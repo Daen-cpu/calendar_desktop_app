@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controller.MainController">
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="top-panel">
+            <Button text="О программе" onAction="#handleAbout" styleClass="button" />
+            <Button text="Выход" onAction="#handleExit" styleClass="button" />
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="20" styleClass="sidebar">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="События" onAction="#loadEventForm" styleClass="button"/>
+            <Button text="Напоминания" onAction="#loadReminderForm" styleClass="button"/>
+        </VBox>
+    </left>
+
+    <center>
+        <AnchorPane fx:id="formPane" styleClass="form-pane" />
+    </center>
+
+    <bottom>
+        <Label fx:id="statusLabel" alignment="CENTER" styleClass="status-label"/>
+    </bottom>
+</BorderPane>

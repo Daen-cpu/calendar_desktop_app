@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controller.ReminderController" styleClass="form-container">
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED"
+                AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0"
+                AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0">
+
+        <VBox spacing="15" styleClass="form-content">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label text="Напоминание" styleClass="form-title" />
+
+            <TableView fx:id="reminderTable" prefHeight="200">
+                <columns>
+                    <TableColumn fx:id="titleColumn" text="Напоминание" prefWidth="200" />
+                    <TableColumn fx:id="descriptionColumn" text="Описание" prefWidth="200"/>
+                    <TableColumn fx:id="startDateColumn" text="Дата начала напоминания" prefWidth="200" />
+                    <TableColumn fx:id="endDateColumn" text="Дата окончания напоминания" prefWidth="200"/>
+                    <TableColumn fx:id="completedColumn" text="Пометка о завершении" prefWidth="400"/>
+                </columns>
+            </TableView>
+
+            <TextField fx:id="titleField" promptText="Заголовок" styleClass="input-field" />
+            <TextArea fx:id="descriptionField" promptText="Описание" wrapText="true" styleClass="input-field" />
+
+            <HBox spacing="10">
+                <DatePicker fx:id="startDatePicker" styleClass="input-field" />
+                <TextField fx:id="startTimeField" promptText="Время начала" styleClass="input-field" />
+            </HBox>
+
+            <HBox spacing="10">
+                <DatePicker fx:id="endDatePicker" styleClass="input-field" />
+                <TextField fx:id="endTimeField" promptText="Время окончания" styleClass="input-field" />
+            </HBox>
+
+            <HBox spacing="10">
+                <CheckBox fx:id="allDayCheckBox" text="Весь день" styleClass="checkbox" />
+            </HBox>
+
+            <HBox spacing="20" alignment="CENTER">
+                <Button text="Сохранить" fx:id="saveButton" styleClass="button" />
+                <Button text="Отметить как выполненное" fx:id="markCompletedButton" styleClass="button" />
+            </HBox>
+
+            <HBox spacing="20" alignment="CENTER">
+                <Label text="Статус" fx:id="statusLabel" styleClass="status-label" />
+            </HBox>
+        </VBox>
+    </ScrollPane>
+</AnchorPane>
